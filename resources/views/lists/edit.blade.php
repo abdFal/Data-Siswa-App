@@ -8,9 +8,19 @@
         <label for="nama">Nama:</label>
         <input type="text" class="form-control" name="nama" value="{{ $siswa->nama }}" />
     </div>
-    <div class="form-group">
+    <div class="form-group mb-3">
         <label for="kelas">Kelas:</label>
         <input type="text" class="form-control" name="kelas" value="{{ $siswa->kelas }}" />
+    </div>
+    <div class="form-group mb-3">
+        <label for="jurusan">Jurusan:</label>
+<select name="jurusan" id="jurusan">
+    <option value="{{ $siswa->jurusan }}">{{ $siswa->jurusan }}</option>
+    <option value="TKJ">TKJ</option>
+    <option value="RPL">RPL</option>
+    <option value="DMM">DMM</option>
+</select>
+
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
     

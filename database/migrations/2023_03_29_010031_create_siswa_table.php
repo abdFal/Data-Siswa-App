@@ -14,17 +14,19 @@ return new class extends Migration
      */
     public function up()
 {
-    Schema::create('siswa', function (Blueprint $table) {
-    $table->id();
-    $table->string('nama');
-    $table->string('kelas');
-    $table->timestamps();
-});
+    Schema::table('siswa', function (Blueprint $table) {
+        $table->id()->onDelete('cascade');
+        $table->string('nama');
+        $table->string('kelas');
+        $table->timestamps();
+        $table->enum('jurusan',['TKJ', 'RPL', 'DMM']);
+    });
 
-    DB::statement('ALTER TABLE siswa AUTO_INCREMENT = 1');
     DB::statement('ALTER TABLE siswa MODIFY COLUMN kelas VARCHAR(100) NOT NULL');
-    
+    DB::statement('TRUNCATE TABLE siswa');
+    DB::statement('ALTER TABLE siswa AUTO_INCREMENT = 1');
 }
+
 
     /**
      * Reverse the migrations.

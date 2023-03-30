@@ -35,7 +35,7 @@
 
 <div class="card">
     <h4 class="text-center mb-4">Sign Up</h4>
-    <form method="POST" action="{{url('register')}}">
+    <form method="POST" action="{{url('signup')}}">
         @csrf
         @if (session()->has('error_msg'))
         <div class="alert alert-danger display-6 fs-5 fw-light">{{session()->get('error_msg')}}</div>

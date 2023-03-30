@@ -35,7 +35,7 @@ class AuthController extends Controller
         # code...
         Auth::logout();
         Session::flush();
-        return redirect('login')->with('log_msg', 'Kamu Udah Keluar, Masukin lagi dong');
+        return redirect('login')->with('log_msg', 'Udah Keluar, Coba login lagi');
 
     }
     public function register_form()
@@ -63,6 +63,6 @@ class AuthController extends Controller
         'email' => $request->input('email'),
         'password' => Hash::make($request->input('password')),
     ]);
-    return redirect('login')->with('success_msg', 'Sign Up Success, Please login to continue');
+    return view('auth.login')->with('success_msg', 'Sign Up Success, Please login to continue');
     }
 }

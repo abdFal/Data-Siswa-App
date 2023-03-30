@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Siswa;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 class SiswaController extends Controller
 {
     /**
@@ -40,12 +41,14 @@ class SiswaController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required|max:255',
-            'kelas' => 'required|numeric',
+            'kelas' => 'required|max:25',
+            'jurusan' => 'required',
         ]);
 
         $siswa = new Siswa;
         $siswa->nama = $validatedData['nama'];
         $siswa->kelas = $validatedData['kelas'];
+        $siswa->jurusan = $validatedData['jurusan'];
         $siswa->save();
 
         return redirect('/');
@@ -95,6 +98,7 @@ class SiswaController extends Controller
         ->update([
             'nama' => $input['nama'],
             'kelas' => $input['kelas'],
+            'jurusan' => $input['jurusan'],
         ]);
 
     return redirect("/");

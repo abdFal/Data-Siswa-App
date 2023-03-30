@@ -6,7 +6,7 @@
 
 		.card {
 			margin-top: 30px;
-			max-width: 400px;
+			max-width: 465px;
 			margin-left: auto;
 			margin-right: auto;
 			padding: 30px;
@@ -50,11 +50,11 @@
 			@endif
 			<div class="mb-3">
 				<label for="email" class="form-label fw-light">Email Address</label>
-				<input type="email" name="email" class="form-control" id="email" required>
+				<input type="email" name="email" class="form-control" id="email" value="{{ old('email') }}" required>
 			</div>
 			<div class="mb-3">
 				<label for="password" class="form-label fw-light">Password</label>
-				<input type="password" name="password" class="form-control" id="password" required>
+				<input type="password" name="password" class="form-control" id="password" value="{{ old('password') }}" required>
 			</div>
 			<div class="button d-flex justify-content-center">
 				<button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
