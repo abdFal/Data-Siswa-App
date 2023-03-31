@@ -3,7 +3,7 @@
 @section('content')
     <table class="table rounded-1">
     <thead class="text-center">
-      <tr class="judul">
+      <tr class="judul rounded-1">
         <th class="text-start">Nomer</th>
         <th class="text-start">Student Name</th>
         <th class="text-start">Class</th>
@@ -20,7 +20,7 @@
             <td class="text-start w-25">{{ $s->kelas }}</td>
             <td class="text-start w-25">{{ $s->jurusan }}</td>
             <td class="text-end">
-                <a href="{{ url('/edit/' . $s->id) }}" class="btn btn-sm btn-outline-light">Pengen Edit</a>
+                <a href="{{ url('/edit/' . $s->id) }}" class="btn btn-sm btn-outline-light px-3">Edit</a>
             </td>
         </tr>
       @php($number++)

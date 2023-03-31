@@ -48,7 +48,7 @@
         </div>
         @endif
         <div class="mb-2">
-    <label for="name" class="form-label fw-light">Full Name</label>
+    <label for="name" class="form-label fw-light"><i class="fa-solid fa-user me-2"></i>Full Name</label>
     <input type="text" name="name" class="form-control" id="name" value="{{ old('name') }}" required>
     @if($errors->has('name'))
         <span class="text-danger">{{$errors->first('name')}}</span>
@@ -56,7 +56,7 @@
 </div>
 
 <div class="mb-2">
-    <label for="email" class="form-label fw-light">Email Address</label>
+    <label for="email" class="form-label fw-light"><i class="fa-solid fa-envelope me-2"></i>Email Address</label>
     <input type="text" name="email" class="form-control" id="email" value="{{ old('email') }}" required>
     @if($errors->has('email'))
         <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -64,7 +64,7 @@
 </div>
 
 <div class="mb-2">
-    <label for="password" class="form-label fw-light">Password</label>
+    <label for="password" class="form-label fw-light"><i class="fa-solid fa-key me-2"></i>Password <small>(Include uppercase n lowercase)</small></label>
     <input type="password" name="password" class="form-control" id="password">
     @if($errors->has('password'))
         <span class="text-danger">{{ $errors->first('password') }}</span>
@@ -72,7 +72,7 @@
 </div>
 
 <div class="mb-2">
-    <label for="password_confirmation" class="form-label fw-light">Confirm Password</label>
+    <label for="password_confirmation" class="form-label fw-light"><i class="fa-solid fa-square-check me-2"></i>Confirm Password</label>
     <input type="password" name="password_confirmation" class="form-control" id="password_confirmation">
     @if($errors->has('password_confirmation'))
         <span class="text-danger">{{ $errors->first('password_confirmation') }}</span>

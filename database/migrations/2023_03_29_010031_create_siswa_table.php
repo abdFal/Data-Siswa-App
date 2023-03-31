@@ -14,16 +14,9 @@ return new class extends Migration
      */
     public function up()
 {
-    Schema::table('siswa', function (Blueprint $table) {
-        $table->id()->onDelete('cascade');
-        $table->string('nama');
-        $table->string('kelas');
-        $table->timestamps();
-        $table->enum('jurusan',['TKJ', 'RPL', 'DMM']);
+    Schema::table('siswas', function (Blueprint $table) {
+        $table->enum('jurusan',['TKJ', 'RPL', 'DMM', 'KGSP']);
     });
-
-    DB::statement('ALTER TABLE siswa MODIFY COLUMN kelas VARCHAR(100) NOT NULL');
-    DB::statement('TRUNCATE TABLE siswa');
     DB::statement('ALTER TABLE siswa AUTO_INCREMENT = 1');
 }
 

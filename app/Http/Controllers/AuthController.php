@@ -63,6 +63,6 @@ class AuthController extends Controller
         'email' => $request->input('email'),
         'password' => Hash::make($request->input('password')),
     ]);
-    return view('auth.login')->with('success_msg', 'Sign Up Success, Please login to continue');
+    return redirect('login')->with('success_msg', 'Sign Up Success, Please login to continue');
     }
 }

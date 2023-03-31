@@ -34,11 +34,17 @@ class SiswaController extends Controller
      */
     public function create()
     {
+        if (!Auth::check()) {
+        return redirect('login');
+    }
         return view('lists.add');
     }
 
     public function store(Request $request)
     {
+        if (!Auth::check()) {
+        return redirect('login');
+    }
         $validatedData = $request->validate([
             'nama' => 'required|max:255',
             'kelas' => 'required|max:25',
@@ -60,10 +66,7 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -73,7 +76,9 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (!Auth::check()) {
+        return redirect('login');
+    }
         $selected_post = Siswa::where('id', $id)
             ->first();
         $view_data = [
@@ -92,7 +97,9 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (!Auth::check()) {
+        return redirect('login');
+    }
         $input = $request->all();
         Siswa::where('id', $id)
         ->update([
@@ -112,7 +119,9 @@ class SiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (!Auth::check()) {
+        return redirect('login');
+    }
         Siswa::SelectedById($id)
             ->delete();
 
