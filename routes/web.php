@@ -21,6 +21,7 @@ Route::get('login', [AuthController::class, 'login']);
 Route::post('login', [AuthController::class, 'authenticate']);
 Route::get('logout', [AuthController::class, 'logout']);
 Route::get('/',[SiswaController::class,'index']);
+Route::get('show/{jurusan}',[SiswaController::class,'show']);
 Route::get('add',[SiswaController::class,'create']);
 Route::post('/add',[SiswaController::class,'store']);
 Route::get('/edit/{id}', [SiswaController::class, 'edit']);

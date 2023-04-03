@@ -37,7 +37,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Are u sure to delete this students?
+        Are u sure to delete the student named <span class="fw-bold text-danger">{{$siswa->nama}}</span> ?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

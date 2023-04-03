@@ -21,7 +21,7 @@ class SiswaController extends Controller
     }
     $siswa = [];
     $siswa = Siswa::all();
-    $view_data = ['siswas' => $siswa];
+    $view_data = ['siswa' => $siswa];
     
     return view('lists.index', $view_data);
 }
@@ -127,4 +127,19 @@ class SiswaController extends Controller
 
         return redirect("/");
     }
+
+    public function show($jurusan)
+{
+    if (!Auth::check()) {
+        return redirect('login');
+    }
+    $siswa = Siswa::SelectedbyJurusan($jurusan)->get();
+    $view_data = [
+        'siswas' => $siswa,
+        'jurusan' => $jurusan,
+    ];
+    return view('lists.show', $view_data);
+}
+
+
 }

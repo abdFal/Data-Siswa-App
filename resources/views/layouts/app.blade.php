@@ -22,11 +22,50 @@
         .label-jurusan{display: block;
         }
         #jurusan{display: block;};
+        #sidebar-wrapper {
+        position: fixed;
+        right: 0;
+        width: 200px;
+        height: 100%;
+        background-color: #f8f9fa;
+        border: none;
+        border-left: 1px solid #dee2e6;
+        border-right: 1px solid #dee2e6;
+    }
+
+    .sidebar-nav {
+        margin-right: 1rem;
+        padding: 0;
+        list-style: none;
+    }
+
+    .sidebar-nav li {
+        border-bottom: 1px solid #6d6f71;
+    }
+
+    .sidebar-nav li a {
+        display: block;
+        padding: 12px 7px;
+        text-decoration: none;
+        color: #333;
+        transition: background-color 0.4s ease;
+    }
+
+    .sidebar-nav li a:hover {
+        background-color: #c8cacc;
+    }
+    .siswa{
+        transition: all 0.3s ease;
+        cursor: default;
+    }
+    .siswa:hover {
+        opacity: 0.75;
+    }
     </style>
 </head>
 <body class="container-fluid">
     @include('layouts.app.header')
-    <div class="container">
+    <div class="container-fluid">
         @yield('content')
     </div>
     @include('layouts.app.footer')

@@ -26,7 +26,7 @@
                 <option value="KGSP">KGSP</option>
             </select>   
     </div>
-    <button type="submit" class="btn btn-sm btn-primary">Save</button>
+    <button type="submit" class="btn btn-sm px-2 btn-primary">Tambah</button>
 </form>
 <a class="text-small" href="{{url('/')}}">Back</a>
 @endsection

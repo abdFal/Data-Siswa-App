@@ -41,7 +41,13 @@ class AuthController extends Controller
     public function register_form()
     {
         # code...
-        return view('auth.signup');
+        if(!Auth::check()
+        ){
+            return view('auth.signup');
+        }
+        else{
+            return redirect('/');
+        }
     }
     public function register(Request $request)
     {

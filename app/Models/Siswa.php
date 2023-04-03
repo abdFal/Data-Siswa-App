@@ -13,4 +13,9 @@ class Siswa extends Model
         # code...
         return $query->where('id', $id);
     }
+    public function ScopeSelectedbyJurusan($query, $jurusan)
+    {
+        # code...
+        return $query->where('jurusan', $jurusan);
+    }
 }
