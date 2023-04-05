@@ -15,7 +15,7 @@
     <div class="form-group mb-3">
         <label class="label-jurusan" for="jurusan">Jurusan:</label>
             <select class="rounded-3 px-3 py-1" name="jurusan" id="jurusan">
-                <option value="{{ $siswa->jurusan }}">{{ $siswa->jurusan }}</option>
+                <option value="{{ $siswa->jurusan }}" disabled>{{ $siswa->jurusan }}</option>
                 <option value="TKJ">TKJ</option>
                 <option value="RPL">RPL</option>
                 <option value="DMM">DMM</option>

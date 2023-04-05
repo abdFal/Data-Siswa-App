@@ -1,9 +1,10 @@
 @extends('layouts.app')
-@section('title', "$jurusan Students")
+@section("title", 'Account')
 
 @section('content')
-<div class="row">
-    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
@@ -29,33 +30,26 @@
                             </ul>
         </div>
     </div>
-    <div class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
-        <h2 class="fw-bold">{{$jurusan}} Students</h2>
-        <table class="table rounded-1">
-            <thead class="text-center">
-                <tr class="judul rounded-1">
-                    <th class="text-start">Nomer</th>
-                    <th class="text-start">Student Name</th>
-                    <th class="text-start">Class</th>
-                    <th class="text-start">Major</th>
-                    <th class="text-center">...</th>
-                </tr>
-            </thead>
-            <tbody>
-                @php($number = 1)
-                @foreach ($students as $s)
-                    <tr class="text-center">
-                        <td class="text-start w-25">{{ $number }}</td>
-                        <td class="text-start w-25">{{ $s->nama }}</td>
-                        <td class="text-start w-25">{{ $s->kelas }}</td>
-                        <td class="text-start w-25">{{ $s->jurusan }}</td>
-                                           </tr>
-                    @php($number++)
-                @endforeach
-            </tbody>
-        </table>
-</div>
-<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModal" aria-hidden="true">
+      <div class="col-md-9">
+        <h2 class="fw-bold"><i class="fa-solid fa-user me-3"></i>{{ Auth::user()->name }}</h2>
+        <h6 class="text-muted">{{ Auth::user()->email }}</h6>
+        <p>Ini adalah halaman akun Anda. Anda dapat mengakses profil Anda, pesan Anda, dan pengaturan akun Anda melalui menu di sebelah kiri.</p>
+        <div class="card w-50">
+          <div class="card-header">
+            Menu
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="#">Profil</a></li>
+            <li class="list-group-item"><a href="#">Pesan</a></li>
+            <li class="list-group-item"><a href="#">Pengaturan</a></li>
+            <li class="list-group-item"><a href="#">Bantuan</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

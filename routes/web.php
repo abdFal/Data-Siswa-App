@@ -27,3 +27,4 @@ Route::post('/add',[SiswaController::class,'store']);
 Route::get('/edit/{id}', [SiswaController::class, 'edit']);
 Route::patch('/edit/{id}', [SiswaController::class, 'update']);
 Route::delete('/edit/{id}', [SiswaController::class, 'destroy']);
+Route::get('/account', [SiswaController::class, 'account']);

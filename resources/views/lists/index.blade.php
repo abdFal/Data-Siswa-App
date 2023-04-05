@@ -7,7 +7,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a  class="fw-bold" href="{{url('/')}}">
+                    <a href="{{url('/')}}">
                         All Students
                     </a>
                 </li>
@@ -23,6 +23,9 @@
                 </li>
                 <li>
                     <a href="{{url('show/KGSP')}}">KGSP</a>
+                </li>
+                <li>
+                    <a href="{{url('account')}}">Account</a>
                 </li>
             </ul>
         </div>
@@ -57,5 +60,22 @@
         <div class="d-flex justify-content-end mb-5 pb-2">
             <a href="{{ url('add') }}" class="btn btn-primary btn-sm" >+ Nambah Siswa</a>
         </div>
+</div>
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 fw-bold" id="logoutModalLabel">Logout Confirmation</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are u sure to logout ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="{{ url('logout') }} " class="btn btn-md btn-outline-danger">Logout</a>
+      </div>
+    </div>
+  </div>
 </div>
 @endsection

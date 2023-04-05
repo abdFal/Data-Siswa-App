@@ -10,7 +10,8 @@
         <a href="{{ url('login') }}" class="btn btn-sm btn-outline-primary me-2">Login</a>
         <a href="{{ url('signup') }} " class="btn btn-sm btn-primary">Sign-up</a>
         @else
-        <a href="{{ url('logout') }} " class="btn btn-md btn-outline-danger">Logout</a>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#logoutModal" class="btn btn-danger">Logout</button>
+        
       </div>
       @endif
     </header>

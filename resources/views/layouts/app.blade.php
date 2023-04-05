@@ -61,6 +61,9 @@
     .siswa:hover {
         opacity: 0.75;
     }
+    .active{
+        font-weight: bold;
+    }
     </style>
 </head>
 <body class="container-fluid">
@@ -76,6 +79,15 @@
             // Closing the alert
             $('.alert').alert('close');
         }, 3000);
+        var links = document.querySelectorAll('.sidebar-nav a');
+
+        links.forEach(function(link) {
+        // cek apakah URL dari elemen <a> sama dengan URL halaman saat ini
+        if (link.href === window.location.href) {
+            // jika sama, tambahkan kelas "active" pada elemen <li> yang berisi elemen <a> tersebut
+            link.parentNode.classList.add('active');
+        }
+    });
     </script>
 </body>
 </html>
