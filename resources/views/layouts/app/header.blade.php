@@ -10,8 +10,7 @@
         <a href="{{ url('login') }}" class="btn btn-sm btn-outline-primary me-2">Login</a>
         <a href="{{ url('signup') }} " class="btn btn-sm btn-primary">Sign-up</a>
         @else
-        <button type="button" data-bs-toggle="modal" data-bs-target="#logoutModal" class="btn btn-danger">Logout</button>
-        
+        <a href="{{ url('account') }}" class="btn btn-outline-dark"><i class="fa-solid fa-user me-2"></i>{{Auth::user()->name}}</a>
       </div>
       @endif
     </header>

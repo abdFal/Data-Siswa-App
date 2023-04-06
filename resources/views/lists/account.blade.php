@@ -34,7 +34,7 @@
         <h2 class="fw-bold"><i class="fa-solid fa-user me-3"></i>{{ Auth::user()->name }}</h2>
         <h6 class="text-muted">{{ Auth::user()->email }}</h6>
         <p>Ini adalah halaman akun Anda. Anda dapat mengakses profil Anda, pesan Anda, dan pengaturan akun Anda melalui menu di sebelah kiri.</p>
-        <div class="card w-50">
+        <div class="card w-50 mb-3">
           <div class="card-header">
             Menu
           </div>
@@ -45,6 +45,7 @@
             <li class="list-group-item"><a href="#">Bantuan</a></li>
           </ul>
         </div>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#logoutModal" class="btn btn-danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
       </div>
 
     </div>
