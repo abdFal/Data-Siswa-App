@@ -43,7 +43,7 @@
             </thead>
             <tbody>
                 @php($number = 1)
-                @foreach ($siswa as $s)
+                @foreach ($siswa->reverse() as $s)
                     <tr class="siswa text-center">
                         <td class="text-start w-25">{{ $number }}</td>
                         <td class="text-start w-25">{{ $s->nama }}</td>
@@ -57,8 +57,13 @@
                 @endforeach
             </tbody>
         </table>
-        <div class="d-flex justify-content-end mb-5 pb-2">
+        <div class="d-flex justify-content-between align-items-center mb-5 pb-4">
+          <div class="paginate">
+            {{ $siswa->links() }}
+          </div>
+          <div>
             <a href="{{ url('add') }}" class="btn btn-primary btn-sm" >+ Nambah Siswa</a>
+          </div>
         </div>
 </div>
 

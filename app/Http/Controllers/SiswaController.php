@@ -14,7 +14,7 @@ class SiswaController extends Controller
             return redirect('login');
         }
 
-        $siswa = Students::all();
+        $siswa = Students::simplePaginate(10);
         $view_data = ['siswa' => $siswa];
 
         return view('lists.index', $view_data);

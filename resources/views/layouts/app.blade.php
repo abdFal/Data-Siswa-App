@@ -64,6 +64,10 @@
     .active{
         font-weight: bold;
     }
+    .paginate{
+        font-size: 13px;
+    }
+
     </style>
 </head>
 <body class="container-fluid">
